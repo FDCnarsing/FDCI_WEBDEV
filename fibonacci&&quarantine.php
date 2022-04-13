@@ -13,20 +13,22 @@
             var errorMessage = "more than 0 badi para naay result";
 
             let inputNum = document.getElementById('limit').value;
+            inputNum = parseInt(inputNum)
             // do fibonacci
-            if(inputNum.includes('-')||inputNum.includes('0')){
+            if(!isNaN(inputNum) && inputNum <= 0){
                 alert(errorMessage); 
-            }else{
+            }
                 for ( i = 1; i <= inputNum; i++ ){  
                     document.getElementById("output").innerHTML += x + "<br>"; 
                     z = x + y; 
                     x = y;
                     y = z; 
                 }  
-            }
+            
         }
 
         function checkQuarantine () {
+            document.getElementById("output_age").innerHTML = "";
             var verdict;
             var tooOld = "you are too old. stay inside!";
             var tooYoung = "you are too young. stay inside!";
@@ -34,9 +36,10 @@
             var errorMessage = "di pwede negative badi";
         
             let inputAge = document.getElementById('age').value;
+            inputAge = parseInt(inputAge)
             // 21 -> lower
             // ouptut -> you are too young. stay inside!
-            if(inputAge.includes('-')){
+            if(!isNaN(inputAge) && inputAge <= -1){
                 alert(errorMessage); 
                 return false;
             }
