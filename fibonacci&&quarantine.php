@@ -16,8 +16,7 @@
             // do fibonacci
             if(inputNum.includes('-')||inputNum.includes('0')){
                 alert(errorMessage); 
-            }
-            else{
+            }else{
                 for ( i = 1; i <= inputNum; i++ ){  
                     document.getElementById("output").innerHTML += x + "<br>"; 
                     z = x + y; 
@@ -37,7 +36,7 @@
             let inputAge = document.getElementById('age').value;
             // 21 -> lower
             // ouptut -> you are too young. stay inside!
-            if(!inputAge.indexOf('-')){
+            if(inputAge.includes('-')){
                 alert(errorMessage); 
                 return false;
             }
